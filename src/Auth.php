@@ -126,7 +126,7 @@ class Auth {
 	 *
 	 * @return null|string
 	 */
-	protected static function get_signed_token( $user, $cap_check = true ) {
+	public static function get_signed_token( $user, $cap_check = true ) {
 
 		/**
 		 * Only allow the currently signed in user access to a JWT token
@@ -351,7 +351,7 @@ class Auth {
 	 *
 	 * @return null|\WP_Error|\WP_User
 	 */
-	protected static function authenticate_user( $username, $password ) {
+	public static function authenticate_user( $username, $password ) {
 
 		/**
 		 * Try to authenticate the user with the passed credentials
@@ -502,7 +502,7 @@ class Auth {
 	}
 
 
-	protected static function set_status( $status_code ) {
+	public static function set_status( $status_code ) {
 		add_filter( 'graphql_response_status_code', function() use ( $status_code ) {
 			return $status_code;
 		});
